@@ -9,7 +9,7 @@ function validasi($data): string
   return $data;
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "post") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $valid = true;
 
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "post") {
     $email = $_POST["email"];
   }
 
-  if (empty($_post["alamat"]) || strlen($_post["alamat"]) <= 5) {
+  if (empty($_POST["alamat"]) || strlen($_POST["alamat"]) <= 5) {
     $alamatErr = "alamat harus lebih dari 5 karakter";
     $valid = false;
 
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "post") {
     $alamat = $_POST["alamat"];
   }
 
-  if (empty($_post["password"])) {
+  if (empty($_POST["password"])) {
     $passwordErr = "password tidak boleh kosong";
     $valid = false;
 
@@ -49,10 +49,10 @@ if ($_SERVER["REQUEST_METHOD"] == "post") {
   }
 
   if($valid){
-    setcookie(nama , $nama , time , 60 , "/");
-    setcookie( email , $email , time , 60 , "/" );
-    setcookie(alamat , $alamat , time , 60 , "/" );
-    setcookie(password , $password , time , 60 , "/");
+    setcookie("nama" , $nama , time() + 60 , "/");
+    setcookie( "email" , $email , time() + 60 , "/" );
+    setcookie("alamat" , $alamat , time() + 60 , "/" );
+    setcookie("password" , $password , time() + 60 , "/");
 
     header("location: tantangan3.php");
     exit;

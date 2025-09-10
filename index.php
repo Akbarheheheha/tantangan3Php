@@ -18,14 +18,14 @@ require "validasi3.php"
     align-items: center;
     height: 100vh;
 
-    /* background: url("https://images.pexels.com/photos/457878/pexels-photo-457878.jpeg") no-repeat center center/cover; */
-    background: url("https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg") no-repeat center center/cover;
+    background: url("https://images.pexels.com/photos/457878/pexels-photo-457878.jpeg") no-repeat center center/cover;
+    /* background: url("https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg") no-repeat center center/cover; */
   }
 
   .container_form {
     display: flex;
-    justify-content: space-between;
-    width: 100vh;
+    justify-content: space-evenly;
+    width: 100vw;
   }
 
   h2 {
@@ -110,6 +110,10 @@ require "validasi3.php"
     height: max-content;
   }
 
+  .output{
+    width: 300px !important ;
+  }
+
 
   button {
     letter-spacing: 1px;
@@ -124,12 +128,11 @@ require "validasi3.php"
     color: white;
   }
 
-  .output {}
 </style>
 
 <body>
   <div class="container_form">
-    <form action="" method="post">
+    <form action="" method="POST">
       <h2>login</h2>
       <div class="grup">
         <input type="text" id="nama" placeholder=" " name="nama" value="<?php echo $nama ?>" />
